@@ -1,0 +1,38 @@
+---
+version: "2"
+
+services:
+
+  rabbitmq:
+    image: rabbitmq:3.6.1-management
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin
+    ports:
+      - "8023:15672"
+      - "8024:5672"
+
+  elasticsearch:
+    image: elasticsearch:5-alpine
+    restart: unless-stopped
+    command: elasticsearch -Etransport.host=127.0.0.1
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - ../data:/usr/share/elasticsearch/data
+
+  my_app:
+    build: .
+    environment:
+      - MODE=dev
+      - ELASTICSEARCH_HOST=127.0.0.1
+      - ELASTICSEARCH_PORT=9200
+    volumes:
+      - .:/code
+    depends_on:
+      - elasticsearch
+    ports:
+      - "9090:9090"
