@@ -32,3 +32,7 @@ The indexing will be a process of:
 | DELETE | /room/{id} | this method will remove the room from the index |
 | GET | /room/{id} | this method will return the room data for a given room id |
 | GET | /health-check | This endpoint retuns the state of the service |
+
+# Running the environment
+
+You need to have Docker installed in your machine, after that, just run this command `docker-compose build && docker-compose up -d`.
