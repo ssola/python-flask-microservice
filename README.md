@@ -27,6 +27,7 @@ The indexing will be a process of:
 
 |Method|URI|Description|
 |------|---|-----------|
-| POST | /room/index | it will receive the room payload, and it will proceed to index it |
+| POST | /room | it will receive the room payload, and it will proceed to index it |
 | PATCH | /room/{id} | this PATCH method will allow us to make changes on the indexed item |
 | DELETE | /room/{id} | this method will remove the room from the index |
+| GET | /room/{id} | this method will return the room data for a given room id |
