@@ -19,8 +19,8 @@ The indexing will be a process of:
 
 - Validate and sanitize the data
 - Get some metadata from the room information like geolocalization
-- Upload the given images URL to Amazon S3
-- Send an event to RabbitMQ every time a new room has been indexed serializing the payload with Avro.
+- Upload the given images URL to [Amazon S3](https://github.com/boto/boto)
+- Send an event to [RabbitMQ](https://github.com/pika/pika) every time a new room has been indexed serializing the payload with Avro.
 
 
 **Endpoints**:
