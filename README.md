@@ -21,11 +21,12 @@ The indexing will be a process of:
 - Get some metadata from the room information like geolocalization
 - Upload the given images URL to Amazon S3
 - Send an event to RabbitMQ every time a new room has been indexed serializing the payload with Avro.
-dd
+
+
 **Endpoints**:
 
 |Method|URI|Description|
 |------|---|-----------|
 | POST | /room/index | it will receive the room payload, and it will proceed to index it |
-| PATCH /room/{id} | this PATCH method will allow us to make changes on the indexed item |
+| PATCH | /room/{id} | this PATCH method will allow us to make changes on the indexed item |
 | DELETE | /room/{id} | this method will remove the room from the index |
