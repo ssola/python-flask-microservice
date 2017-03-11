@@ -7,9 +7,9 @@ This is the code used in this series of articles:
 
 This is a basic approach of building a Microservice on top of Flask, with some useful packages like:
 
-- Flask
-- Flask-Injector
-- Connector
+- [Flask](http://flask.pocoo.org/)
+- [Flask-Injector](https://pypi.python.org/pypi/Flask-Injector)
+- [Connexion](https://github.com/zalando/connexion)
 
 # Requirements
 
