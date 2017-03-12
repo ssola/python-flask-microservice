@@ -14,7 +14,7 @@ services:
       - elasticsearch
       - rabbitmq
     ports:
-      - "9090:9090"
+      - "9091:9090"
       
   rabbitmq:
     image: rabbitmq:3.6.1-management

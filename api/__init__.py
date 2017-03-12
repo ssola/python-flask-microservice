@@ -1,1 +1,1 @@
-__author__ = 'ssola'
+from api.room import Room
