@@ -26,7 +26,7 @@ The indexing will be a process of:
 **Endpoints**:
 
 |Method|URI|Description| Status |
-|------|---|-----------| Status|
+|------|---|-----------|--------|
 | POST | /room | it will receive the room payload, and it will proceed to index it | **Development** |
 | PATCH | /room/{id} | this PATCH method will allow us to make changes on the indexed item | Not started |
 | DELETE | /room/{id} | this method will remove the room from the index | Not started |
