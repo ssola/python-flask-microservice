@@ -38,6 +38,12 @@ class ElasticSearchIndex(object):
         if not self.instance:
             self.instance = self.elastic_factory.create()
 
+            if not self.instance.indices.exists(self.index_name):
+                self.instance.indices.create(
+                    index=self.index_name,
+                    body=self.index_mapper
+                )
+
         return self.instance
 
     def index(self, payload: dict) -> bool:
@@ -46,3 +52,25 @@ class ElasticSearchIndex(object):
             doc_type=self.doc_type,
             body=payload
         )
+
+    def exists_by_url(self, url: str) -> bool:
+        matches = self.connection().search(
+            index=self.index_name,
+            doc_type=self.doc_type,
+            body={
+                "query": {
+                    "query_string": {
+                        "query": 'url:"{}"'.format(url)
+                    }
+                }
+            }
+        )
+
+        hits = matches['hits']['hits']
+        print(url)
+        print(hits)
+
+        if hits:
+            return True
+
+        return False
