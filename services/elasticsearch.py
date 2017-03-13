@@ -67,8 +67,6 @@ class ElasticSearchIndex(object):
         )
 
         hits = matches['hits']['hits']
-        print(url)
-        print(hits)
 
         if hits:
             return True
