@@ -4,6 +4,7 @@ This is the code used in this series of articles:
 
 - https://medium.com/p/building-microservices-with-python-part-i-5240a8dcc2fb
 - https://medium.com/@ssola/building-microservices-with-python-part-2-9f951199094a#.z48wq941g
+- https://medium.com/@ssola/building-microservices-with-python-part-3-a556a4c4bc00#.yn4p8rstp
 
 This is a basic approach of building a Microservice on top of Flask, with some useful packages like:
 
