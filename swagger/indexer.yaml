@@ -18,7 +18,7 @@ produces:
 paths:
   /room/:
     post:
-      operationId: api.room.class_instance.post
+      operationId: api.room.Room.post
       parameters:
         - in: body
           name: room

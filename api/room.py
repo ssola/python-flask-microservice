@@ -6,8 +6,9 @@ from services.elasticsearch import ElasticSearchIndex
 
 
 class Room(object):
-    @inject(indexer=ElasticSearchIndex)
-    def post(self, indexer: ElasticSearchIndex, room: dict) -> dict:
+    @staticmethod
+    @inject
+    def post(indexer: ElasticSearchIndex, room: dict) -> dict:
         """
         This wil return a location, kind of 'Camden, London'.
         We need to have some data like lat/lon for that input.
@@ -23,5 +24,3 @@ class Room(object):
             return {"error": "Room not saved"}, 400
 
         return room, 201
-
-class_instance = Room()

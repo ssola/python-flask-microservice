@@ -1,6 +1,12 @@
 from elasticsearch import Elasticsearch
 
 
+def create_index(elastic_search, index_name):
+    """Functionality to create index."""
+    resp = elastic_search.indices.create(index=index_name)
+    print(resp)
+
+
 class ElasticSearchFactory(object):
     def __init__(self, host: str, port: int):
         self.host = host
