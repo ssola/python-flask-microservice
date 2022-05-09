@@ -5,17 +5,19 @@ services:
   our-app:
     build: .
     environment:
-      - MODE=dev
-      - ELASTICSEARCH_HOST=127.0.0.1
+      - ELASTICSEARCH_HOST=elasticsearch
       - ELASTICSEARCH_PORT=9200
     volumes:
       - .:/code
     depends_on:
       - elasticsearch
       - rabbitmq
+    links:
+      - elasticsearch
+      - rabbitmq
     ports:
       - "9091:9090"
-      
+
   rabbitmq:
     image: rabbitmq:3.6.1-management
     environment:
